@@ -2,7 +2,7 @@ Summary:	Fast arbitrary precision correctly-rounded decimal floating point arith
 Summary(pl.UTF-8):	Szybka arytmetyka zmiennoprzecinkowa dowolnej precyzji z właściwym zaokrąglaniem
 Name:		mpdecimal
 Version:	2.3
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: http://www.bytereef.org/mpdecimal/download.html
@@ -52,6 +52,9 @@ Statyczna biblioteka libmpdec.
 Summary:	libmpdec API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libmpdec
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for libmpdec library.
@@ -69,7 +72,6 @@ Dokumentacja API biblioteki libmpdec.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
