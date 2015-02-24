@@ -2,7 +2,7 @@ Summary:	Fast arbitrary precision correctly-rounded decimal floating point arith
 Summary(pl.UTF-8):	Szybka arytmetyka zmiennoprzecinkowa dowolnej precyzji z właściwym zaokrąglaniem
 Name:		mpdecimal
 Version:	2.4.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: http://www.bytereef.org/mpdecimal/download.html
