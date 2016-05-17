@@ -1,15 +1,13 @@
 Summary:	Fast arbitrary precision correctly-rounded decimal floating point arithmetic
 Summary(pl.UTF-8):	Szybka arytmetyka zmiennoprzecinkowa dowolnej precyzji z właściwym zaokrąglaniem
 Name:		mpdecimal
-Version:	2.4.1
-Release:	2
+Version:	2.4.2
+Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: http://www.bytereef.org/mpdecimal/download.html
-#Source0:	http://www.bytereef.org/software/mpdecimal/releases/%{name}-%{version}.tar.gz
-# bytereef.org site is currently down (Oct 2014), temporarily use sources mirrored by Debian
-Source0:	http://ftp.debian.org/debian/pool/main/m/mpdecimal/%{name}_%{version}.orig.tar.gz
-# Source0-md5:	fae05d6382a284928349c501dd18f09e
+Source0:	http://www.bytereef.org/software/mpdecimal/releases/%{name}-%{version}.tar.gz
+# Source0-md5:	aa63cab5d06a96855a44da2db90a29d9
 URL:		http://www.bytereef.org/mpdecimal/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
