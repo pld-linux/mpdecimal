@@ -2,12 +2,13 @@ Summary:	Fast arbitrary precision correctly-rounded decimal floating point arith
 Summary(pl.UTF-8):	Szybka arytmetyka zmiennoprzecinkowa dowolnej precyzji z właściwym zaokrąglaniem
 Name:		mpdecimal
 Version:	2.4.2
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: http://www.bytereef.org/mpdecimal/download.html
 Source0:	http://www.bytereef.org/software/mpdecimal/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	aa63cab5d06a96855a44da2db90a29d9
+Patch0:		%{name}-cpython.patch
 URL:		http://www.bytereef.org/mpdecimal/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -63,6 +64,7 @@ Dokumentacja API biblioteki libmpdec.
 
 %prep
 %setup -q
+%patch -p0
 
 %build
 %configure
