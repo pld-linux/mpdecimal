@@ -1,14 +1,14 @@
 Summary:	Fast arbitrary precision correctly-rounded decimal floating point arithmetic
 Summary(pl.UTF-8):	Szybka arytmetyka zmiennoprzecinkowa dowolnej precyzji z właściwym zaokrąglaniem
 Name:		mpdecimal
-Version:	2.4.2
-Release:	2
+Version:	2.5.0
+Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: http://www.bytereef.org/mpdecimal/download.html
 Source0:	http://www.bytereef.org/software/mpdecimal/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	aa63cab5d06a96855a44da2db90a29d9
-Patch0:		%{name}-cpython.patch
+# Source0-md5:	3cacb882f59f795f4ed6822d80bd2f7d
+Patch0:		build.patch
 URL:		http://www.bytereef.org/mpdecimal/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,7 +64,7 @@ Dokumentacja API biblioteki libmpdec.
 
 %prep
 %setup -q
-%patch -p0
+%patch0 -p1
 
 %build
 %configure
@@ -91,16 +91,21 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG.txt LICENSE.txt README.txt
 %attr(755,root,root) %{_libdir}/libmpdec.so.*.*.*
+%attr(755,root,root) %{_libdir}/libmpdec++.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmpdec.so.2
+%attr(755,root,root) %ghost %{_libdir}/libmpdec++.so.2
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libmpdec.so
+%attr(755,root,root) %{_libdir}/libmpdec++.so
+%{_includedir}/decimal.hh
 %{_includedir}/mpdecimal.h
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libmpdec.a
+%{_libdir}/libmpdec++.a
 
 %files apidocs
 %defattr(644,root,root,755)
