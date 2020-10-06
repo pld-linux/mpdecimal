@@ -1,0 +1,11 @@
+--- mpdecimal-2.5.0/libmpdec++/Makefile.in~	2020-06-27 21:41:49.000000000 +0200
++++ mpdecimal-2.5.0/libmpdec++/Makefile.in	2020-10-06 16:21:10.633148144 +0200
+@@ -52,7 +52,7 @@ $(LIBSTATIC_CXX): Makefile $(OBJS)
+ 	$(RANLIB) $(LIBSTATIC_CXX)
+ 
+ $(LIBSHARED_CXX): Makefile $(SHARED_OBJS)
+-	$(LDXX) $(MPD_LDXXFLAGS) -o $(LIBSHARED_CXX) $(SHARED_OBJS) -lm
++	$(LDXX) $(MPD_LDXXFLAGS) -o $(LIBSHARED_CXX) $(SHARED_OBJS) -L../libmpdec -lmpdec -lm
+ 	ln -sf $(LIBSHARED_CXX) $(LIBNAME_CXX)
+ 	ln -sf $(LIBSHARED_CXX) $(LIBSONAME_CXX)
+ 
