@@ -94,7 +94,7 @@ Statyczna biblioteka libmpdec++.
 Summary:	libmpdec API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libmpdec
 Group:		Documentation
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 API documentation for libmpdec library.
